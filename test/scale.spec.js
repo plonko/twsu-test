@@ -15,6 +15,7 @@ describe('<Scale/>', function () {
   // Component
   const wrapper = shallow(<Scale sentence={sentence} thesauarus={thesauarus} />);
 
+  // Tests
   it('should exist', function () {
     expect(wrapper).to.have.length(1);
   });
