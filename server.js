@@ -22,6 +22,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/words', (req, res) => {
+  // res.status(500).send('Something broke!')
   res.json(words);
 });
 

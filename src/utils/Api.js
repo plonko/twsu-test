@@ -1,15 +1,23 @@
-import request from 'superagent/lib/client';
+import 'whatwg-fetch'
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response
+  } else {
+    var error = new Error(response.statusText)
+    error.response = response
+    throw error
+  }
+}
+
+function parseJSON(response) {
+  return response.json()
+}
 
 export default {
-  getResults: (url) => {
-    return new Promise((resolve, reject) => {
-      request
-        .get(url)
-        .end((err, response) => {
-          if (err) reject(err);
-          console.log(JSON.parse(response.text))
-          resolve(JSON.parse(response.text));
-        })
-    });
+  fetchResults: (url) => {
+    return fetch(url)
+      .then(checkStatus)
+      .then(parseJSON)
   }
 }
