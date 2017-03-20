@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+import Scale from './Scale';
+import Api from '../utils/Api';
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      thesauarus: {}
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({value: e.target.value});
+  }
+
+  componentDidMount() {
+    Api
+      .fetchResults('http://localhost:3000/api/words')
+      .then(json => {
+        this.setState({ thesauarus: json });
+      }).catch(console.log.bind(console));
+  }
+
+  render() {
+    const sentence = this.state.value;
+    return (
+      <div>
+        <input type="text" placeholder="Enter your text" value={sentence} onChange={this.handleChange} />
+        <Scale sentence={sentence} thesauarus={this.state.thesauarus} />
+      </div>
+    );
+  }
+}
