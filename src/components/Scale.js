@@ -20,7 +20,7 @@ const Scale = (props) => {
   const sum = happyCount + sadCount;
   const scale = happyCount/sum || 0;
 
-  return <p>{scale}</p>
+  return <div>{scale}</div>
 }
 
 export default Scale;
