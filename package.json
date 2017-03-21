@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
-    "test": "mocha -w test/helpers/browser.js test/*.spec.js",
+    "test": "mocha test/helpers/browser.js test/*.spec.js",
     "start": "node server.js",
     "lint": "eslint src"
   },

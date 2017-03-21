@@ -11,7 +11,7 @@ describe('<Scale/>', function () {
     happy: ['delight', 'delighted', 'delightful', 'happy', 'glad', 'joy', 'joyful', 'merry', 'pleasant'],
     sad: ['disappointed', 'miserable', 'sad', 'sorrow', 'unhappy']
   }
-  
+
   // Component
   const wrapper = shallow(<Scale sentence={sentence} thesauarus={thesauarus} />);
 
@@ -24,15 +24,15 @@ describe('<Scale/>', function () {
     expect(wrapper.find('div')).to.have.length(1);
   });
 
-  it('should have a happiness scale of 0.6666666666666666', function () {
-    expect(wrapper.props().children).to.equal(0.6666666666666666);
-  });
-
   it('should have a prop on the instance for sentence', function () {
     expect(wrapper.instance().props.sentence).to.be.defined;
   });
 
   it('should have a prop on the instance for thesauarus', function () {
     expect(wrapper.instance().props.thesauarus).to.be.defined;
+  });
+
+  it(`should have a happiness scale of 0.6666666666666666 when given the sentence '${sentence}'`, function () {
+    expect(wrapper.props().children).to.equal(0.6666666666666666);
   });
 });
