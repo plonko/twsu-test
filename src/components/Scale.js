@@ -15,8 +15,7 @@ function calcScale(arrayOfNums) {
 }
 
 const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+  margin: 4em;
   overflow: hidden;
   position: relative;
 `;
@@ -44,12 +43,12 @@ const Face = styled.section`
 
 const SadEnd = styled(Face)`
   background: orange;
-  left: 2rem;
+  left: rem;
 `;
 
 const HappyEnd = styled(Face)`
   background: pink;
-  right: 2rem;
+  right: 0rem;
 `;
 
 const Marker = styled(Face)`
