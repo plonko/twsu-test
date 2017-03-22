@@ -21,14 +21,14 @@ const Wrapper = styled.section`
 `;
 
 const Ruler = styled.section`
-  height: 4rem;
-  width: 100%;
-  background-color: rgb(115,199,192);
-  background-image: linear-gradient(to right, rgba(0,0,0,0.25) 6px, transparent 6px), linear-gradient(to right, transparent 12px, rgba(0,0,0,0.25) 12px, rgba(0,0,0,0.25) 14px, transparent 14px, transparent 20px, rgba(0,0,0,0.25) 20px, rgba(0,0,0,0.25) 22px, transparent 22px, transparent 28px, rgba(0,0,0,0.25) 28px, rgba(0,0,0,0.25) 30px, transparent 30px, transparent 36px, rgba(0,0,0,0.25) 36px, rgba(0,0,0,0.25) 38px, transparent 38px);
-  background-repeat: repeat-x;
-  background-size: 44px 30px, 44px 20px;
-  background-position: 8px bottom;
-  border-bottom: 2px solid rgba(0,0,0,0.25);
+  // height: 4rem;
+  // width: 100%;
+  // background-color: rgb(115,199,192);
+  // background-image: linear-gradient(to right, rgba(0,0,0,0.25) 6px, transparent 6px), linear-gradient(to right, transparent 12px, rgba(0,0,0,0.25) 12px, rgba(0,0,0,0.25) 14px, transparent 14px, transparent 20px, rgba(0,0,0,0.25) 20px, rgba(0,0,0,0.25) 22px, transparent 22px, transparent 28px, rgba(0,0,0,0.25) 28px, rgba(0,0,0,0.25) 30px, transparent 30px, transparent 36px, rgba(0,0,0,0.25) 36px, rgba(0,0,0,0.25) 38px, transparent 38px);
+  // background-repeat: repeat-x;
+  // background-size: 44px 30px, 44px 20px;
+  // background-position: 8px bottom;
+  // border-bottom: 2px solid rgba(0,0,0,0.25);
 `;
 
 const Face = styled.section`
