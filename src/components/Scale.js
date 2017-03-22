@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { colours } from '../styles/variables';
 
 function countInstances(words, thesauarus) {
   // Turn object keys into array and return new array with count of words mapped to it
@@ -32,18 +33,17 @@ const Ruler = styled.section`
 `;
 
 const Face = styled.section`
-  width: 4rem;
-  height: 4rem;
+  width: 1rem;
+  height: 1rem;
   background-size: contain;
-  background: pink;
   opacity: 0.5;
   transform-origin: center center;
   position: absolute;
 `;
 
 const SadEnd = styled(Face)`
-  background: orange;
-  left: rem;
+  background: ${colours.teal};
+  left: 0rem;
 `;
 
 const HappyEnd = styled(Face)`
