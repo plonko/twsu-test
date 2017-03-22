@@ -23,13 +23,15 @@ export default class App extends Component {
       .then(json => {
         this.setState({ thesauarus: json });
       }).catch(console.log.bind(console));
+
+    this.textInput.focus();
   }
 
   render() {
     const sentence = this.state.value;
     return (
       <div>
-        <input type="text" placeholder="Enter your text" value={sentence} onChange={this.handleChange} />
+        <input type="text" ref={(input) => { this.textInput = input; }} placeholder="Enter your text" value={sentence} onChange={this.handleChange} />
         <Scale sentence={sentence} thesauarus={this.state.thesauarus} />
       </div>
     );
