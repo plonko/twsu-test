@@ -18,10 +18,11 @@ const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
   overflow: hidden;
+  position: relative;
 `;
 
 const Ruler = styled.section`
-  height: 50px;
+  height: 4rem;
   width: 100%;
   background-color: rgb(115,199,192);
   background-image: linear-gradient(to right, rgba(0,0,0,0.25) 6px, transparent 6px), linear-gradient(to right, transparent 12px, rgba(0,0,0,0.25) 12px, rgba(0,0,0,0.25) 14px, transparent 14px, transparent 20px, rgba(0,0,0,0.25) 20px, rgba(0,0,0,0.25) 22px, transparent 22px, transparent 28px, rgba(0,0,0,0.25) 28px, rgba(0,0,0,0.25) 30px, transparent 30px, transparent 36px, rgba(0,0,0,0.25) 36px, rgba(0,0,0,0.25) 38px, transparent 38px);
@@ -31,17 +32,39 @@ const Ruler = styled.section`
   border-bottom: 2px solid rgba(0,0,0,0.25);
 `;
 
+const Face = styled.section`
+  width: 4rem;
+  height: 4rem;
+  background-size: contain;
+  background: pink;
+  opacity: 0.5;
+  transform-origin: center center;
+  position: absolute;
+`;
+
+const SadEnd = styled(Face)`
+  background: orange;
+  left: 2rem;
+`;
+
+const HappyEnd = styled(Face)`
+  background: pink;
+  right: 2rem;
+`;
+
+const Marker = styled(Face)`
+  background: green;
+  position: absolute;
+  top: -4rem;
+  left: -4rem;
+`;
+
 const Title = styled.div`
-  font-size: 1.5em;
-  color: palevioletred;
+  height: 4rem;
+  width: 100%;
+  position: relative;
   transition: all 300ms;
   transform: translateX(${props => props.scaleValue}%);
-  .unicorn {
-    width: 8px;
-    height: 8px;
-    background-size: contain;
-    background: red;
-  }
 `;
 
 const Scale = (props) => {
@@ -53,9 +76,11 @@ const Scale = (props) => {
 
   return (
     <Wrapper>
+      <SadEnd />
+      <HappyEnd />
       <Ruler />
       <Title scaleValue={scaleValue}>
-        <div className="unicorn"></div>
+        <Marker />
       </Title>
     </Wrapper>
   )
