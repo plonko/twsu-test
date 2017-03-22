@@ -1,8 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
-var config = require('./webpack.config');
-
+var config = process.env.NODE_ENV === 'production' ? require('./webpack.config.production') : require('./webpack.config');
 var app = express();
 var compiler = webpack(config);
 
