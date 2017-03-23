@@ -24,11 +24,11 @@ const Scale = (props) => {
 
   return (
     <Wrapper>
-      <SadEnd />
-      <HappyEnd />
+      <SadEnd scaleValue={scaleValue}/>
+      <HappyEnd scaleValue={scaleValue}/>
       <Ruler />
       <MarkerWrapper scaleValue={scaleValue}>
-        <Marker />
+        <Marker></Marker>
       </MarkerWrapper>
     </Wrapper>
   )

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Scale from './Scale';
 import Api from '../utils/Api';
-import { Input } from '../styles/app';
+import { Wrapper, Input } from '../styles/app';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: 'Type your happy or sad text here!',
       thesauarus: {}
     };
 
@@ -30,10 +30,10 @@ export default class App extends Component {
   render() {
     const sentence = this.state.value;
     return (
-      <div>
+      <Wrapper>
         <Input type="text" innerRef={(input) => { this.textInput = input; }} placeholder="Enter your text" value={sentence} onChange={this.handleChange} />
         <Scale sentence={sentence} thesauarus={this.state.thesauarus} />
-      </div>
+      </Wrapper>
     );
   }
 }
