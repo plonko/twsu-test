@@ -4,6 +4,10 @@ import {expect} from 'chai';
 
 import App from '../src/components/App';
 import Scale from '../src/components/Scale';
+import { Wrapper, Input, H1, H2 } from '../src/styles/app';
+
+App.__Rewire__('SVGImport', () => <p>SVGPlaceholder</p>);
+Scale.__Rewire__('SVGImport', () => <p>SVGPlaceholder</p>);
 
 describe('<App/>', function () {
   // Component
@@ -18,12 +22,12 @@ describe('<App/>', function () {
     expect(wrapper.find(Scale)).to.have.length(1);
   });
 
-  it('should render an `input` of type `text`', function () {
-    expect(wrapper.find('input[type="text"]')).to.have.length(1);
+  it('should render one <Input /> component', function () {
+    expect(wrapper.find(Input)).to.have.length(1);
   });
 
-  it('should have a state of `value`, with an empty string', function () {
-    expect(wrapper.state('value')).to.equal('');
+  it('should have a state of `value`, with `Type your happy or sad text here!`', function () {
+    expect(wrapper.state('value')).to.equal('Type your happy or sad text here!');
   });
 
   it('should have a state of `thesauarus`, with an empty object', function () {

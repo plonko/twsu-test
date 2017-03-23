@@ -1,5 +1,7 @@
-require('babel-register')();
-
+require('babel-register')({
+  plugins: ['babel-plugin-rewire']
+})
+require.extensions['.svg'] = () => null;
 const jsdom = require('jsdom').jsdom;
 const exposedProperties = ['window', 'navigator', 'document'];
 

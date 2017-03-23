@@ -3,6 +3,9 @@ import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
 
 import Scale from '../src/components/Scale';
+import { Wrapper, Ruler, SadEnd, HappyEnd, MarkerWrapper, Marker } from '../src/styles/scale';
+
+Scale.__Rewire__('SVGImport', () => <p>SVGPlaceholder</p>);
 
 describe('<Scale/>', function () {
   // Props
@@ -20,8 +23,8 @@ describe('<Scale/>', function () {
     expect(wrapper).to.have.length(1);
   });
 
-  it('should render a div', function () {
-    expect(wrapper.find('div')).to.have.length(1);
+  it('should render a <Wrapper> component', function () {
+    expect(wrapper.find(Wrapper)).to.have.length(1);
   });
 
   it('should have a prop on the instance for sentence', function () {
@@ -32,7 +35,7 @@ describe('<Scale/>', function () {
     expect(wrapper.instance().props.thesauarus).to.be.defined;
   });
 
-  it(`should have a happiness scale of 0.6666666666666666 when given the sentence '${sentence}'`, function () {
-    expect(wrapper.props().children).to.equal(0.6666666666666666);
+  it(`should have a happiness scale of 66.66666666666666 when given the sentence '${sentence}'`, function () {
+    expect(wrapper.find(MarkerWrapper).props().scaleValue).to.equal(66.66666666666666);
   });
 });
