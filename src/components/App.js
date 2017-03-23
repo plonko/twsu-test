@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Scale from './Scale';
 import Api from '../utils/Api';
-import { Wrapper, Input } from '../styles/app';
+import { Wrapper, Input, H1, H2 } from '../styles/app';
 
 export default class App extends Component {
   constructor(props) {
@@ -18,6 +18,11 @@ export default class App extends Component {
     this.setState({value: e.target.value});
   }
 
+  handleClick(e) {
+    // Select all text on click
+    e.target.setSelectionRange(0, e.target.value.length)
+  }
+
   componentDidMount() {
     Api
       .fetchResults('http://localhost:3000/api/words')
@@ -31,7 +36,9 @@ export default class App extends Component {
     const sentence = this.state.value;
     return (
       <Wrapper>
-        <Input type="text" innerRef={(input) => { this.textInput = input; }} placeholder="Enter your text" value={sentence} onChange={this.handleChange} />
+        <H1>The TWSU Happiness-O-Meter</H1>
+        <Input type="text" innerRef={(input) => { this.textInput = input; }} placeholder="Enter your text" value={sentence} onChange={this.handleChange} onClick={this.handleClick}/>
+        <H2>As you type our amazing machines will analyse how happy or sad your text is!</H2>
         <Scale sentence={sentence} thesauarus={this.state.thesauarus} />
       </Wrapper>
     );

@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { colours } from './variables';
 import sushiSvg from '../images/sushi.svg'
 import happySvg from '../images/happy.svg'
 import sadSvg from '../images/sad.svg'
 
 export const Wrapper = styled.div`
-  margin: 4em;
+  margin: 6em 4em 4em 4em;
   padding: 0 4rem;
   position: relative;
 `;

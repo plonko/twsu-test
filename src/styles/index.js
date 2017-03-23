@@ -1,16 +1,14 @@
 import styledNormalize from './normalize';
-import { injectGlobal } from 'styled-components'
- 
+import { injectGlobal } from 'styled-components';
+import { colours } from './variables';
+
+
 export default () => injectGlobal`
   ${styledNormalize}
- 
+
   html,
   body {
-    height: 100vh;
+    font-family: 'Chewy', cursive;
+    color: ${colours.black};
   }
-
-  // #root {
-  //   padding-top: 2rem;
-  //   border: 1rem solid #FFDC00;
-  // }
 `
